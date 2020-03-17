@@ -49,7 +49,7 @@ cProfile.run('loop(array)')  # 10001    0.001    0.000    0.001    0.000 {built-
 # О(n2)
 
 
-ваниант 2
+#вариант 2
 def memo(array):
     counter = {}
     frequency = 1
