@@ -4,11 +4,6 @@
 
 import random
 
-SIZE = 10
-MAX_ITEM = 50
-arr = [round((random.random() * 50), 2) for _ in range(SIZE)]
-print(arr)
-
 
 def merge(left_list, right_list):
     sorted_list = []
@@ -30,7 +25,6 @@ def merge(left_list, right_list):
             else:
                 sorted_list.append(right_list[right_list_index])
                 right_list_index += 1
-
         # Если достигнут конец левого списка, элементы правого списка
         # добавляем в конец результирующего списка
         elif left_list_index == left_list_length:
@@ -62,5 +56,12 @@ def merge_sort(nums):
     return merge(left_list, right_list)
 
 
+SIZE = 10
+LIMIT = 50
+arr = [round(random.uniform(0, LIMIT), 2) for _ in range(SIZE)]
+print(arr)
 sorted_arr = merge_sort(arr)
 print(sorted_arr)
+
+
+

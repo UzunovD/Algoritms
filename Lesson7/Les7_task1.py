@@ -9,32 +9,27 @@
 # шейкерная и другие в зачёт не идут.
 import random
 
-SIZE = 10
-MIN_ITEM = -100
-MAX_ITEM = 100
-arr = [random.randint(MIN_ITEM, MAX_ITEM-1) for _ in range(SIZE)]
-print(arr)
-
-
 
 def bubble_sort(array):
     n = 1
+
     while n < len(array):
+        is_sorted = True
         for i in range(len(array) - n):  # n для естественного поведения
             if array[i] < array[i + 1]:  # если левый меньше правого
-                array[i], array[i + 1] = array[i + 1], array[i]  # больший
-                # влево, меньший вправо
-            print(array[i])  # дополнительный принт показывающий
-            # естественность поведения
+                array[i], array[i + 1] = array[i + 1], array[i]
+                is_sorted = False
+
+        if is_sorted:
+            break
+
         n += 1
         print(array)
 
 
+SIZE = 10
+LIMIT = 100
+arr = [random.randrange(-LIMIT, LIMIT) for _ in range(SIZE)]
+print(arr)
 bubble_sort(arr)
-
-
-# n в 22 строке придает естественность поведения алгоритму и позволяет не
-# проверять уже отсортированные числа, т.к. за один проход вложенного цикла
-# наименьшее число перемещяется в самый конец, следовательно полсе первого
-# прохода вложенного цикла в конце массива бедет наименьший элемент и длина
-# не сортированного массива сокращается с каждой итерацией на 1.
+print(arr)
